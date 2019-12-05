@@ -3,7 +3,34 @@
 }
 
 .chat-main {
-  background-color:#ffffff;
-  height:100vw;
+  height:100vh;
   width:calc(100vw - 300px);
+  margin-left:300px;
+  position: relative;
+  // background-color:black;
+  // background-color:red;
+  &__group-info {
+    background-color:#ffffff;
+    height:100px;
+    width:calc(100vw - 300px);
+    border-bottom:1px solid #eeeeee;
+    margin-top:auto;
+    margin-left:auto;
+    position: absolute;
+  }
+  &__message-list {
+    background-color:#fafafa;
+    height:100vh;
+    width:calc(100vw - 300px);
+    margin:100px 0;
+    padding-bottom:90px;
+    position:absolute;
+  }
+  &__message-form {
+    background-color:#d2d2d2;
+    height:90px;
+    width:calc(100vw - 300px);
+    bottom:0;
+    position:absolute;
+  }
 }
