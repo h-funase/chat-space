@@ -1,12 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
 .side-bar {
   height:100VH;
   width:300px;
-  position: absolute;
+  position: relative;
+  float:left;
   &__user-name {
     background-color:#253141;
     height:100px;
     width:300px;
     position: absolute;
+    display: flex;
+    align-items:center;
+    .top-items {
+      height:20px;
+      width:260px;
+      margin:0 20px;
+      
+      display: flex;
+      justify-content:space-between;
+      // line-height:center;
+
+      &__name {
+        color: #ffffff;
+      }
+      &__icons {
+        width:60px;
+        height:20px;
+        // background-color:blue;
+        display: flex;
+        justify-content:flex-end;
+        .fa-edit{
+          margin-left:5px;
+          color:#ffffff
+        }
+        .fa-cog{
+          margin-left:5px;
+          color:#ffffff
+        }
+      }
+    }
   }
   &__group-list {
     background-color:#2f3e51;
