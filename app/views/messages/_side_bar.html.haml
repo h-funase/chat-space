@@ -1,12 +1,17 @@
 .side-bar
   .side-bar__group-list
+  .side-bar__group
+    .group-name
+      グループ名
+    .group-message
+      まだメッセージがありません
   .side-bar__user-name
     .top-items
       .top-items__name
         namae
       .top-items__icons
         = link_to "#", class: "contents__btn" do
-          <i class="fa fa-edit"></i>
-          
+          = icon( 'fa', 'edit',class: "edit-icon")
         = link_to "#", class: "contents__btn" do
-          <i class="fa fa-cog"></i>
+          = icon( 'fa', 'cog',class: "config-icon")
+          

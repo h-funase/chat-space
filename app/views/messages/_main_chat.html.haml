@@ -1,5 +1,42 @@
 .chat-main
-  .chat-main__group-info
-  .chat-main__message-list
-  .chat-main__message-form
-  
+  .group-info
+    .group-info__left
+      .group-info__left-name
+        test
+      .group-info__left-menber
+        Menber : masa
+    .group-info__right
+      =link_to "#", class: "edit" do
+        Edit
+    
+  .message-list
+    .list__info
+      .list__info-name
+        masa
+      .list__info-timestamp
+        2019/11/20(Wed) 17:43:01
+    .list__text
+      おはよう!
+
+    .list2__info
+      .list2__info-name
+        masa
+      .list2__info-timestamp
+        2019/11/20(Wed) 17:43:01
+    .list2__text
+      おはよう!
+
+
+  .message-form
+    .post-form
+      %form{class: "post-form__text"}
+        %input{class: "text-input", type: "text",placeholder:"type a message"}
+      -# .post-form__image
+        -# <input class="image_up" type="file" accept="image/*">
+      %label{class: "post-form__image"}
+        = icon( 'far', 'image',class: "image-icon")
+        %input{class: "image-up_button",type: "file",}
+          
+    .post-send
+      .post-send__button
+        Send
