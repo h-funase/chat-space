@@ -2,13 +2,15 @@
   box-sizing: border-box;
 }
 
-.chat-main {
+@import "variable";
+
+.chatMain {
   height:100vh;
   width:calc(100vw - 300px);
   float:right;
   position: relative;
-  .group-info {
-    background-color:#ffffff;
+  .groupInfo {
+    background-color:$chatWhite;
     height:100px;
     width:calc(100vw - 300px);
     border-bottom:1px solid #eeeeee;
@@ -16,80 +18,75 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // align-items: center;
     padding: 0 40px;
-    &__left {
+    &__leftbox {
       margin:35px 0 0 0;
-      &-name {
+      &--name {
         color:#333333;
         font-size:20px;
       }
-      &-menber {
+      &--menber {
         margin-top:15px;
         font-size:12px;
-        color:#999999;
+        color:$infoColor;
       }
     }
-    &__right {
-        .edit {
+    &__rightbox {
+        &--edit {
           margin:28px 0px;
           padding:10px 20px;
-          border:solid 1px #38aef0;
-          color:#38aef0;
+          border:solid 1px $ButtonColor;
+          color:$ButtonColor;
           text-decoration: none;
         }
     }
   }
-  .message-list {
+  .messageList {
     background-color:#fafafa;
     margin-top:100px;
     height:calc(100vh - 190px);
     width:calc(100vw - 300px);
     position:absolute;
-    .list__info {
+    &__info {
       margin:35px 0 0 40px;
       display:flex;
       justify-content:start;
-      &-name {
+      &--name {
         font-size:16px;
         color:#333333;
       }
-      &-timestamp {
+      &--timestamp {
         font-size:12px;
         margin-left:10px;
-        color:#999999;
+        color:$infoColor;
       }
     }
-    .list__text {
+    &__text {
       margin:12px 0 0 40px;
       color:#434A54;
       font-size:4px;
     }
-
-
-    .list2__info {
+    &2__info {
       margin:46px 0 0 40px;
       display:flex;
       justify-content:start;
-      &-name {
+      &--name {
         font-size:16px;
         color:#333333;
       }
-      &-timestamp {
+      &--timestamp {
         font-size:12px;
         margin-left:10px;
-        color:#999999;
+        color:$infoColor;
       }
     }
-    .list2__text {
+    &2__text {
       margin:12px 0 0 40px;
       color:#434A54;
       font-size:4px;
     }
-
-
   }
-  .message-form {
+  .messageForm {
     background-color:#d2d2d2;
     height:90px;
     width:calc(100vw - 300px);
@@ -97,46 +94,41 @@
     position:absolute;
     display:flex;
     align-items: center;
-    .post-form {
+    &__post {
       background-color:white;
       height:50px;
-      width:1200px;
+      width:1185px;
       margin-left:40px;
       display: flex;
       justify-content: space-between;
-      &__text {
+      &--input {
+        margin-left:10px;
         height:50px;
-        width:1000px;
-        .text-input {
-          margin-left:10px;
-          height:50px;
-          width:1130px;
-          border: none;
-        }
+        width:900px;
+        border: none;
       }
-      &__image {
+      &--image {
         margin-right:10px;
-        .image-up_button { 
-         display: none;
-        }
-        .image-icon {
+        &--icon {
           line-height:50px;
           font-size:24px;
         }
+        &--upload { 
+          display: none;   
+        }
       }
     }
-    .post-send {
-      background-color: #38aef0;
+    .postSend {
+      background-color:$ButtonColor;
       height:50px;
       width:100px;
       margin:0 40px 0 15px;
       display: flex;
       justify-content:center;
       align-items: center;
-      .post-send__button{
-        color: white;
+      &__button{
+        color:$chatWhite;
       }
     }
-    
   }
 }

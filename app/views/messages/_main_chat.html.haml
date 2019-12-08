@@ -1,42 +1,38 @@
-.chat-main
-  .group-info
-    .group-info__left
-      .group-info__left-name
+.chatMain
+  .groupInfo
+    .groupInfo__leftbox
+      .groupInfo__leftbox--name
         test
-      .group-info__left-menber
+      .groupInfo__leftbox--menber
         Menber : masa
-    .group-info__right
-      =link_to "#", class: "edit" do
+    .groupInfo__rightbox
+      =link_to "#", class: "groupInfo__rightbox--edit" do
         Edit
     
-  .message-list
-    .list__info
-      .list__info-name
+  .messageList
+    .messageList__info
+      .messageList__info--name
         masa
-      .list__info-timestamp
+      .messageList__info--timestamp
         2019/11/20(Wed) 17:43:01
-    .list__text
+    .messageList__text
       おはよう!
 
-    .list2__info
-      .list2__info-name
+    .messageList2__info
+      .messageList2__info--name
         masa
-      .list2__info-timestamp
+      .messageList2__info--timestamp
         2019/11/20(Wed) 17:43:01
-    .list2__text
+    .messageList2__text
       おはよう!
 
-
-  .message-form
-    .post-form
-      %form{class: "post-form__text"}
-        %input{class: "text-input", type: "text",placeholder:"type a message"}
-      -# .post-form__image
-        -# <input class="image_up" type="file" accept="image/*">
-      %label{class: "post-form__image"}
-        = icon( 'far', 'image',class: "image-icon")
-        %input{class: "image-up_button",type: "file",}
+  .messageForm
+    %form{class: "messageForm__post"}
+      %input{class: "messageForm__post--input", type: "text",placeholder:"type a message"}
+      %label{class: "messageForm__post--image"}
+        = icon( 'far', 'image',class: "messageForm__post--image--icon")
+        %input{class: "messageForm__post--image--upload",type: "file",}
           
-    .post-send
-      .post-send__button
+    .postSend
+      .postSend__button
         Send
