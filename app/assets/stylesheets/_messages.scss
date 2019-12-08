@@ -1,3 +1,132 @@
 * {
   box-sizing: border-box;
 }
+
+.chatMain {
+  height:100vh;
+  width:calc(100vw - 300px);
+  float:right;
+  position: relative;
+  .groupInfo {
+    background-color:$chatWhite;
+    height:100px;
+    width:calc(100vw - 300px);
+    border-bottom:1px solid #eeeeee;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    &__leftbox {
+      margin:35px 0 0 0;
+      &--name {
+        color:#333333;
+        font-size:20px;
+      }
+      &--menber {
+        margin-top:15px;
+        font-size:12px;
+        color:$infoColor;
+      }
+    }
+    &__rightbox {
+        &--edit {
+          margin:28px 0px;
+          padding:10px 20px;
+          border:solid 1px $ButtonColor;
+          color:$ButtonColor;
+          text-decoration: none;
+        }
+    }
+  }
+  .messageList {
+    background-color:#fafafa;
+    margin-top:100px;
+    height:calc(100vh - 190px);
+    width:calc(100vw - 300px);
+    position:absolute;
+    &__info {
+      margin:35px 0 0 40px;
+      display:flex;
+      justify-content:start;
+      &--name {
+        font-size:16px;
+        color:#333333;
+      }
+      &--timestamp {
+        font-size:12px;
+        margin-left:10px;
+        color:$infoColor;
+      }
+    }
+    &__text {
+      margin:12px 0 0 40px;
+      color:#434A54;
+      font-size:4px;
+    }
+    &2__info {
+      margin:46px 0 0 40px;
+      display:flex;
+      justify-content:start;
+      &--name {
+        font-size:16px;
+        color:#333333;
+      }
+      &--timestamp {
+        font-size:12px;
+        margin-left:10px;
+        color:$infoColor;
+      }
+    }
+    &2__text {
+      margin:12px 0 0 40px;
+      color:#434A54;
+      font-size:4px;
+    }
+  }
+  .messageForm {
+    background-color:#d2d2d2;
+    height:90px;
+    width:calc(100vw - 300px);
+    bottom:0;
+    position:absolute;
+    display:flex;
+    align-items: center;
+    &__post {
+      background-color:white;
+      height:50px;
+      width:1185px;
+      margin-left:40px;
+      display: flex;
+      justify-content: space-between;
+      &--input {
+        margin-left:10px;
+        height:50px;
+        width:900px;
+        border: none;
+      }
+      &--image {
+        margin-right:10px;
+        &--icon {
+          line-height:50px;
+          font-size:24px;
+        }
+        &--upload { 
+          display: none;   
+        }
+      }
+    }
+    .postSend {
+      background-color:$ButtonColor;
+      height:50px;
+      width:100px;
+      margin:0 40px 0 15px;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      &__button{
+        color:$chatWhite;
+      }
+    }
+  }
+}
