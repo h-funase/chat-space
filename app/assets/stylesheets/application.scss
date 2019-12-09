@@ -4,9 +4,12 @@
 @import "modules/flash";
 @import "variable";
 
+
 @import "./messages";
 @import "./side-bar";
+@import "./user";
+@import "modules/group";
 
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "./user";
+
