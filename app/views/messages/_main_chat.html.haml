@@ -1,1 +1,38 @@
-chatogamen
+.chatMain
+  .groupInfo
+    .groupInfo__leftbox
+      .groupInfo__leftbox--name
+        test
+      .groupInfo__leftbox--menber
+        Menber : masa
+    .groupInfo__rightbox
+      =link_to "#", class: "groupInfo__rightbox--edit" do
+        Edit
+    
+  .messageList
+    .messageList__info
+      .messageList__info--name
+        masa
+      .messageList__info--timestamp
+        2019/11/20(Wed) 17:43:01
+    .messageList__text
+      おはよう!
+
+    .messageList2__info
+      .messageList2__info--name
+        masa
+      .messageList2__info--timestamp
+        2019/11/20(Wed) 17:43:01
+    .messageList2__text
+      おはよう!
+
+  .messageForm
+    %form{class: "messageForm__post"}
+      %input{class: "messageForm__post--input", type: "text",placeholder:"type a message"}
+      %label{class: "messageForm__post--image"}
+        = icon( 'far', 'image',class: "messageForm__post--image--icon")
+        %input{class: "messageForm__post--image--upload",type: "file",}
+          
+    .postSend
+      .postSend__button
+        Send
