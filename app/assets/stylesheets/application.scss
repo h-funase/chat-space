@@ -3,10 +3,13 @@
 @import "config/colors";
 @import "modules/flash";
 @import "modules/group";
-@import "variable";
+// @import "variable";
 
-@import "./messages";
-@import "./side-bar";
+@import "modules/chat.scss";
+@import "modules/side_bar.scss";
+
+// @import "./messages";
+// @import "./side-bar";
 
 @import "font-awesome-sprockets";
 @import "./font-awesome";
