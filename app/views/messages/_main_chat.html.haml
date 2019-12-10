@@ -10,7 +10,7 @@
           - group.users.each do |user|
             = user.name
     .groupInfo__rightbox
-      =link_to "#", class: "groupInfo__rightbox--edit" do
+      =link_to edit_group_path(@group.id), class: "groupInfo__rightbox--edit" do
         Edit
   .messages
     = render @messages
