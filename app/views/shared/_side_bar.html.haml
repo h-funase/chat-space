@@ -1,29 +1,17 @@
 .side-bar
-  .header
-    %h3.header__name
+  .side-bar__user-name
+    .top-items
       = current_user.name
-    %ul.header__lists
-      %li.list
+      .top-items__icons
+        = link_to edit_user_path(current_user)do
+          = icon('fas', 'cog', class: 'config-icon')
         = link_to new_group_path do
-          = icon('fas', 'edit', class: 'icon')
-      %li.list
-        = link_to edit_user_path(current_user) do
-          = icon('fas', 'cog', class: 'icon')
-  .groups
+          = icon('fas', 'edit', class: 'edit-icon')
+  .side-bar__group-list
     - current_user.groups.each do |group|
-      .group
-        = link_to group_messages_path(group) do
+      .side-bar__group
+        = link_to group_messages_path(group)do
           .group__name
             = group.name
           .group__message
-            メッセージはまだありません。
-    -# .group
-    -#   .group__name
-    -#     グループ名
-    -#   .group__message
-    -#     新着メッセージ
-    -# .group
-    -#   .group__name
-    -#     グループ名
-    -#   .group__message
-    -#     新着メッセージ
+            = group.show_last_message
