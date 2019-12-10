@@ -92,20 +92,22 @@
     position:absolute;
     display:flex;
     align-items: center;
+    // justify-content:space-between;
     &__post {
       background-color:white;
       height:50px;
       width:1185px;
       margin-left:40px;
-      display: flex;
-      justify-content: space-between;
+      position: relative;
       &--input {
         margin-left:10px;
         height:50px;
-        width:900px;
+        width:500px;
         border: none;
+        position: absolute;
       }
       &--image {
+        float: right;
         margin-right:10px;
         &--icon {
           line-height:50px;
@@ -115,17 +117,17 @@
           display: none;   
         }
       }
-    }
-    .postSend {
-      background-color:$ButtonColor;
-      height:50px;
-      width:100px;
-      margin:0 40px 0 15px;
-      display: flex;
-      justify-content:center;
-      align-items: center;
-      &__button{
-        color:$chatWhite;
+      .postSend {
+        background-color:$ButtonColor;
+        height:50px;
+        width:100px;
+        margin:auto 40px auto 1200px;
+        position: absolute;
+        float: right;
+        color:white
+
+        
+        // position: absolute;
       }
     }
   }
