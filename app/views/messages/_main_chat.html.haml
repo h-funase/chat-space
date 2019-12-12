@@ -15,7 +15,7 @@
   .messages
     = render @messages
   .messageForm
-    = form_for [@group, @message], html: { class: "messageForm__post" } do |f|
+    = form_for [@group, @message], html: { class: "messageForm__post" }, id:"new_message"  do |f|
       = f.text_field :content, class: 'messageForm__post--input', placeholder: 'type a message'
       = f.label :image, class: 'messageForm__post--image' do
         = icon('fas', 'image', class: 'messageForm__post--image--icon')
