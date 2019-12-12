@@ -2,13 +2,12 @@
 .chatMain
   .groupInfo
     .groupInfo__leftbox
-      - current_user.groups.each do |group|
-        .groupInfo__leftbox--name
-          = group.name
-        .groupInfo__leftbox--menber
-          Menber:
-          - group.users.each do |user|
-            = user.name
+      .groupInfo__leftbox--name
+        = @group.name
+      .groupInfo__leftbox--menber
+        Menber:
+        - @group.users.each do |user|
+          = user.name
     .groupInfo__rightbox
       =link_to edit_group_path(@group.id), class: "groupInfo__rightbox--edit" do
         Edit
