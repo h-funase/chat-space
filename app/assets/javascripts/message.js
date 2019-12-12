@@ -2,49 +2,48 @@ $(function(){
   function buildHTML(message){
     if (message.image) {
       var html = `<div class="messageLists">
-                  <div class="messageList">
-                    <div class="messageList__info">
-                      <div class="messageList__info--name">
-                      ${message.user_name}
+                    <div class="messageList">
+                      <div class="messageList__info">
+                        <div class="messageList__info--name">
+                          ${message.user_name}
+                        </div>
+                        <div class="messageList__info--timestamp">
+                          ${message.created_at}
+                        </div>
                       </div>
-                      <div class="messageList__info--timestamp">
-                      ${message.created_at}
-                      </div>
-                      </div>
-                    <div class="messageList__text">
+                      <div class="messageList__text">
                       <p class="lower-message__content">
-                      ${message.content}
+                        ${message.content}
                       <img src="${message.image}">
                       </img>
                       </p>
-                    </div>
+                      </div>
                     </div>
                   </div>`
     } else {
       var html = `<div class="messageLists">
-                  <div class="messageList">
-                  <div class="messageList__info">
-                  <div class="messageList__info--name">
-                  ${message.user_name}
+                    <div class="messageList">
+                      <div class="messageList__info">
+                        <div class="messageList__info--name">
+                          ${message.user_name}
+                        </div>
+                        <div class="messageList__info--timestamp">
+                          ${message.created_at}
+                        </div>
+                      </div>
+                    <div class="messageList__text">
+                    <p class="lower-message__content">
+                      ${message.content}
+                    </p>
+                    </div>
                   </div>
-                  <div class="messageList__info--timestamp">
-                  ${message.created_at}
-                  </div>
-                  </div>
-                  <div class="messageList__text">
-                  <p class="lower-message__content">
-                  ${message.content}
-                  </p>
-                  </div>
-                  </div>
-                  </div>`
+                </div>`
     }
     return html;
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
-    // console.log(formData);
     var url = $(this).attr('action')
     $.ajax({
       url: url,
