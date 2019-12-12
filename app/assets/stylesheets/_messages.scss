@@ -7,6 +7,7 @@
   width:calc(100vw - 300px);
   float:right;
   position: relative;
+  
   .groupInfo {
     background-color:$chatWhite;
     height:100px;
@@ -17,6 +18,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
+    z-index:1;
+    position: fixed;
     &__leftbox {
       margin:35px 0 0 0;
       &--name {
@@ -39,49 +42,38 @@
         }
     }
   }
-  .messageList {
-    background-color:#fafafa;
+  .messages{
+    overflow: scroll;
+    height: calc(100vh - 190px);
     margin-top:100px;
-    height:calc(100vh - 190px);
+  }
+  .messageLists{
+    background-color:#fafafa;
+    height:auto;
     width:calc(100vw - 300px);
-    position:absolute;
-    &__info {
-      margin:35px 0 0 40px;
-      display:flex;
-      justify-content:start;
-      &--name {
-        font-size:16px;
-        color:#333333;
+    .messageList {
+      background-color:#fafafa;
+      height:auto;
+      width:calc(100vw - 300px);
+      &__info {
+        padding:35px 0 0 40px;
+        display:flex;
+        justify-content:start;
+        &--name {
+          font-size:16px;
+          color:#333333;
+        }
+        &--timestamp {
+          font-size:12px;
+          margin-left:10px;
+          color:$infoColor;
+        }
       }
-      &--timestamp {
-        font-size:12px;
-        margin-left:10px;
-        color:$infoColor;
+      &__text {
+        margin:12px 0 0 40px;
+        color:#434A54;
+        font-size:4px;
       }
-    }
-    &__text {
-      margin:12px 0 0 40px;
-      color:#434A54;
-      font-size:4px;
-    }
-    &2__info {
-      margin:46px 0 0 40px;
-      display:flex;
-      justify-content:start;
-      &--name {
-        font-size:16px;
-        color:#333333;
-      }
-      &--timestamp {
-        font-size:12px;
-        margin-left:10px;
-        color:$infoColor;
-      }
-    }
-    &2__text {
-      margin:12px 0 0 40px;
-      color:#434A54;
-      font-size:4px;
     }
   }
   .messageForm {
@@ -92,10 +84,11 @@
     position:absolute;
     display:flex;
     align-items: center;
+    position: fixed;
     &__post {
       background-color:white;
       height:50px;
-      width:1185px;
+      width:1030px;
       margin-left:40px;
       position: relative;
       &--input {
@@ -120,12 +113,10 @@
         background-color:$ButtonColor;
         height:50px;
         width:100px;
-        margin:auto 40px auto 1200px;
+        margin:auto 40px auto 1050px;
         position: absolute;
         float: right;
-        color:white
-
-        
+        color:white;
         // position: absolute;
       }
     }
