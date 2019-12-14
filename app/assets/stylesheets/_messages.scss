@@ -47,33 +47,28 @@
     height: calc(100vh - 190px);
     margin-top:100px;
   }
-  .messageLists{
+  .messagelist{
     background-color:#fafafa;
     height:auto;
     width:calc(100vw - 300px);
-    .messageList {
-      background-color:#fafafa;
-      height:auto;
-      width:calc(100vw - 300px);
-      &__info {
-        padding:35px 0 0 40px;
-        display:flex;
-        justify-content:start;
-        &--name {
-          font-size:16px;
-          color:#333333;
-        }
-        &--timestamp {
-          font-size:12px;
-          margin-left:10px;
-          color:$infoColor;
-        }
+    &__info {
+      padding:35px 0 0 40px;
+      display:flex;
+      justify-content:start;
+      &--name {
+        font-size:16px;
+        color:#333333;
       }
-      &__text {
-        margin:12px 0 0 40px;
-        color:#434A54;
-        font-size:4px;
+      &--timestamp {
+        font-size:12px;
+        margin-left:10px;
+        color:$infoColor;
       }
+    }
+    &__text {
+      margin:12px 0 0 40px;
+      color:#434A54;
+      font-size:4px;
     }
   }
   .messageForm {
