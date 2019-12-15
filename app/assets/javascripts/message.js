@@ -1,46 +1,4 @@
 $(function(){
-  function buildHTML(message){
-    if (message.image) {
-      var html = `<div class="messageLists">
-                    <div class="messageList">
-                      <div class="messageList__info">
-                        <div class="messageList__info--name">
-                          ${message.user_name}
-                        </div>
-                        <div class="messageList__info--timestamp">
-                          ${message.created_at}
-                        </div>
-                      </div>
-                      <div class="messageList__text">
-                      <p class="lower-message__content">
-                        ${message.content}
-                      <img src="${message.image}">
-                      </img>
-                      </p>
-                      </div>
-                    </div>
-                  </div>`
-    } else {
-      var html = `<div class="messageLists">
-                    <div class="messageList">
-                      <div class="messageList__info">
-                        <div class="messageList__info--name">
-                          ${message.user_name}
-                        </div>
-                        <div class="messageList__info--timestamp">
-                          ${message.created_at}
-                        </div>
-                      </div>
-                    <div class="messageList__text">
-                    <p class="lower-message__content">
-                      ${message.content}
-                    </p>
-                    </div>
-                  </div>
-                </div>`
-    }
-    return html;
-  }
   $('#new_message').on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
@@ -64,4 +22,82 @@ $(function(){
       alert('メッセージ送信に失敗しました');
     })
   })
-})
+      var buildHTML = function(message) {
+        if (message.content && message.image) { 
+          var html = `<div class="messagelist" data-message-id="${message.id}">
+                            <div class="messagelist__info">
+                              <div class="messagelist__info--name">
+                                ${message.user_name}
+                              </div>
+                              <div class="messagelist__info--timestamp">
+                                ${message.created_at}
+                              </div>
+                            </div>
+                            <div class="messagelist__text">
+                            <p class="lower-message__content">
+                              ${message.content}
+                            </p>
+                            <img src="${message.image}">
+                            </img>
+                          </div>
+                        </div>`
+          } else if (message.content){
+            var html = `<div class="messagelist" data-message-id="${message.id}">
+                            <div class="messagelist__info">
+                              <div class="messagelist__info--name">
+                                ${message.user_name}
+                              </div>
+                              <div class="messagelist__info--timestamp">
+                                ${message.created_at}
+                              </div>
+                            </div>
+                          <div class="messagelist__text">
+                          <p class="lower-message__content">
+                            ${message.content}
+                          </p>
+                          </div>
+                       </div>`
+          }else if (message.image) {
+            var html = `<div class="messagelist" data-message-id="${message.id}">
+                            <div class="messagelist__info">
+                              <div class="messagelist__info--name">
+                                ${message.user_name}
+                              </div>
+                              <div class="messagelist__info--timestamp">
+                                ${message.created_at}
+                              </div>
+                            </div>
+                            <div class="messagelist__text">
+                            <p class="lower-message__content">
+                            <img src="${message.image}">
+                            </img>
+                            </p>
+                            </div>
+                        </div>`
+          }
+          return html;
+        } 
+    var reloadMessages = function () {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      last_message_id = $('.messagelist:last').data("message-id"); 
+      $.ajax({ 
+        url: "api/messages", 
+        type: 'get', 
+        dataType: 'json', 
+        data: {id: last_message_id} 
+      })
+      .done(function (messages) { 
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML = buildHTML(message)
+          $('.messages').append(insertHTML);
+         })
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        })
+      .fail(function () {
+        alert('error');
+      });
+    }
+  };
+  setInterval(reloadMessages, 7000);
+});

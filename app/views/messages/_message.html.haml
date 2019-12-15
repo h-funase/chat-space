@@ -1,12 +1,11 @@
-.messageLists
-  .messageList
-    .messageList__info
-      .messageList__info--name
-        = message.user.name
-      .messageList__info--timestamp
-        = message.created_at.strftime("%Y/%m/%d %H:%M")
-    .messageList__text
-      - if message.content.present?
-        %p.lower-message__content
-          = message.content
-      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.messagelist{"data-message-id": "#{message.id}"}
+  .messagelist__info
+    .messagelist__info--name
+      = message.user.name
+    .messagelist__info--timestamp
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .messagelist__text
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
