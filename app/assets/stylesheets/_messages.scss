@@ -7,6 +7,8 @@
   width:calc(100vw - 300px);
   float:right;
   position: relative;
+  background-color:#fafafa;
+  background-size: cover;
   
   .groupInfo {
     background-color:$chatWhite;
@@ -46,6 +48,7 @@
     overflow: scroll;
     height: calc(100vh - 190px);
     margin-top:100px;
+    
   }
   .messagelist{
     background-color:#fafafa;
