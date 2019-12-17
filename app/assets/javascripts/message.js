@@ -24,7 +24,7 @@ $(function(){
   })
       var buildHTML = function(message) {
         if (message.content && message.image) { 
-          var html = `<div class="messagelist"p data-message-id="${message.id}">
+          var html = `<div class="messagelist" data-message-id="${message.id}">
                             <div class="messagelist__info">
                               <div class="messagelist__info--name">
                                 ${message.user_name}

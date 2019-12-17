@@ -19,4 +19,4 @@
       = f.label :image, class: 'messageForm__post--image' do
         = icon('fas', 'image', class: 'messageForm__post--image--icon')
         = f.file_field :image, class: 'messageForm__post--image--upload'
-      = f.submit 'Send', class: 'postSend'
+    %input.form__submit{type: 'submit', value: 'Send', class:'postSend'}
